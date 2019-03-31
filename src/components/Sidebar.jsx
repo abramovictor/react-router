@@ -1,14 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from './Link';
 
-export const Sidebar = (props) => {
+export const Sidebar = ({ topics }) => {
     return (
         <aside>
             <nav className="nav nav-tabs mb-5 shadow-sm bg-light">
-                <Link href="/index.html" active={true}>JavaScript</Link>
-                <Link href="/index.html">React</Link>
-                <Link href="/index.html">Angular</Link>
-                <Link href="/index.html">Node.js</Link>
+                {topics.map(({ id, title }) =>
+                    <Link
+                        key={id}
+                        className="nav-link nav-item"
+                        to={`/books/${id}`}>
+                        {title}
+                    </Link>
+                )}
             </nav>
         </aside>
     );

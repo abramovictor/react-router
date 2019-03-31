@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-export const Home = props => {
+export const Home = (props) => {
     return (
         <main className="py-5">
             <div className="container">
                 <h2 className="display-4 mb-4">
-                    {props.title}
+                    JavaScript Library
                 </h2>
                 <p>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit, alias cupiditate! Quia molestiae vitae, inventore, perspiciatis tenetur aliquid explicabo distinctio perferendis hic qui iure aperiam tempore ipsam culpa repudiandae voluptate libero fugit, esse dolor consectetur rem. Quos praesentium, quisquam laudantium, voluptas numquam eos reprehenderit ratione, ad veritatis amet doloremque aliquid?

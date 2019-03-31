@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
-export const About = props => {
+export const About = (props) => {
     return (
         <main className="py-5">
             <div className="container">
-                <h2 className="display-4 mb-4">{props.title}</h2>
+                <h2 className="display-4 mb-4">
+                    About Us
+                </h2>
 
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit, alias cupiditate! Quia molestiae vitae, inventore, perspiciatis tenetur aliquid explicabo distinctio perferendis hic</p>
 

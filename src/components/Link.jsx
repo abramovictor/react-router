@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
-export const Link = props => {
+export const Link = ({ children, ...rest }) => {
     return (
-        <a className={`nav-item nav-link${props.active ? ' active' : ''}`} href={props.href}>
-            {props.children}
-        </a>
+        <NavLink exact {...rest}>{children}</NavLink>
     );
 }

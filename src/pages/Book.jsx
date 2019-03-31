@@ -1,43 +1,35 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export const Book = (props) => {
-    let { cover, title, description, author, publisher, year, pages } = props.data;
+export const Book = ({ books, match }) => {
+    const book = books.find(book => book.slug === match.params.book);
+    let { cover, title, description, author, publisher, year, pages } = book;
 
     return (
-        <div className="card shadow card-book">
-            <div className="d-flex">
-                <header className="card-img-top shadow">
-                    <img src={require(`../img/books/${cover}`)} alt="Learning JavaScript" />
-                </header>
+        <div className="card flex-row shadow card-book">
+            <header className="card-img-top shadow">
+                <img src={('/').concat(require(`../img/books/${cover}`))} alt={title} />
+            </header>
 
-                <section className="card-body">
-                    <h5 className="card-title">{title}</h5>
-                    <p className="card-text">{description}</p>
-                </section>
-            </div>
+            <section className="card-body">
+                <h5 className="card-title">{title}</h5>
 
-            <section className="card-footer">
-                <table className="table">
-                    <tbody>
-                        <tr>
-                            <th>Author</th>
-                            <td>{author}</td>
-                        </tr>
-                        <tr>
-                            <th>Publisher</th>
-                            <td>{publisher}</td>
-                        </tr>
-                        <tr>
-                            <th>Year</th>
-                            <td>{year}</td>
-                        </tr>
-                        <tr>
-                            <th>Pages</th>
-                            <td>{pages}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <ul className="list-group list-group-flush mb-4">
+                    <li className="list-group-item">
+                        <strong>Author: </strong>{author}
+                    </li>
+                    <li className="list-group-item">
+                        <strong>Publisher: </strong>{publisher}
+                    </li>
+                    <li className="list-group-item">
+                        <strong>Year: </strong>{year}
+                    </li>
+                    <li className="list-group-item">
+                        <strong>Pages: </strong>{pages}
+                    </li>
+                </ul>
+                <p className="card-text">{description}</p>
             </section>
+
         </div>
     );
 }

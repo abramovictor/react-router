@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from './Link';
 
-export const Header = props => {
+export const Header = (props) => {
     return (
         <header className="header sticky-top">
             <nav className="navbar navbar-expand-lg navbar-light bg-light py-0 shadow-sm">
@@ -16,9 +16,11 @@ export const Header = props => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <div className="navbar-nav nav-tabs ml-auto">
-                            <Link href="/index.html" active={true}>Home</Link>
-                            <Link href="/pricing.html" >Pricing</Link>
-                            <Link href="/about.html" >About</Link>
+                            <Link exact className="nav-item nav-link" to="/">Home</Link>
+                            <Link className="nav-item nav-link" to="/books">Books</Link>
+                            <Link className="nav-item nav-link" to="/about" >About</Link>
+                            <Link className="nav-item nav-link" to="/login" >Login</Link>
+                            <Link className="nav-item nav-link" to="/logout" >Logout</Link>
                         </div>
                     </div>
                 </div>
