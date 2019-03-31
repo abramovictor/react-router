@@ -7,4 +7,4 @@ import './styles/styles.css';
 import books from './data/store.json';
 import { App } from './App';
 
-ReactDOM.render(<App />, document.querySelector('#app'));
+ReactDOM.render(<App initialData={books} />, document.querySelector('#app'));
